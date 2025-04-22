@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 
 public class PojoSetData
 {
-
 	@Test
 	public void pojousingSetData()
 	{

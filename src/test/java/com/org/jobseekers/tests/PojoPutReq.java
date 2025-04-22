@@ -2,7 +2,6 @@ package com.org.jobseekers.tests;
 
 public class PojoPutReq {
 	
-	
 	String name;
 	String job;
 	String id;
