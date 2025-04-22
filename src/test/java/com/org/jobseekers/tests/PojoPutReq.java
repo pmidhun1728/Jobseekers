@@ -1,4 +1,4 @@
-package RestAssuredPRac;
+package com.org.jobseekers.tests;
 
 public class PojoPutReq {
 	
@@ -6,9 +6,6 @@ public class PojoPutReq {
 	String name;
 	String job;
 	String id;
-	
-	
-	
 	
 	public String getName() {
 		return name;
@@ -27,11 +24,7 @@ public class PojoPutReq {
 	}
 	public void setId(String id) {
 		this.id = id;
-	}
-	
-	
-	
-  
+	} 
 }
 	
 	
