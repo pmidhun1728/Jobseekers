@@ -15,8 +15,6 @@ public class PojoSetData
 		GoResRequestPutLoad data = new GoResRequestPutLoad ("Jai","SDET","717");
 		
 
-			 given()
-				
 		 String url = ("https://reqres.in/api/users");
 			
 		 
