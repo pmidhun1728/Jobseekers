@@ -10,19 +10,12 @@ public class PojoSetData
 	@Test
 	public void pojousingSetData()
 	{
-		PojoPutReq data = new PojoPutReq();
-		
-		      data.setName("Jaya");
-		      data.setJob("SDET1");
-		      data.setId ("38");
-		      
+		GoResRequestPutLoad data = new GoResRequestPutLoad("Jaya", "SDET1", "38");
 
 			 given()
 				
 				   .contentType("application/json")
 				   .body(data.toString())
-				   
-				      
 				.when()
 				   .get("https://reqres.in/api/users")
 				   
