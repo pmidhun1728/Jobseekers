@@ -7,6 +7,7 @@ import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+
 public class GoResPost extends Base {
    private FakerClass fakerClass;
 
