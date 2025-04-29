@@ -1,6 +1,7 @@
 package com.org.jobseekers.tests;
 
-import com.fasterxml.jackson.core.util.RequestPayload;
+import com.org.jobseekers.utils.FakerClass;
+import com.org.jobseekers.utils.RequestPayload;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -13,14 +14,14 @@ public class PostCall {
     public void postRequest(){
 
         String url = "https://gorest.co.in/public/v2/users";
-//       RequestPayload requestPayload = new RequestPayload(1, "FirstName", "albert123@gmail.com", "Male", "active");
+        RequestPayload requestPayload = new RequestPayload(1, "Midhun", FakerClass.getEmail(), "Male", "Active");
 
         Response response = given()
                 .log().everything()
                 .header("Content-Type", "application/json")
                 .header("accept", "application/json")
                 .header("Authorization", "Bearer 9cee3cf96dbafa82ff98cc1f76c3fbf650db688bb5024a446d01ed8e0ffa03d7")
-//                .body()
+                .body(requestPayload)
                 .when()
                 .post(url)
                 .then()
@@ -36,29 +37,6 @@ public class PostCall {
         System.out.println(getEmail);
 
         Assert.assertEquals(getEmail, "albert123@gmail.com");
-
-
-
-        //Given
-
-        // header
-        // path paratmeter
-        // query paramenter
-        //Authenticatio and authorization
-        //Cookies
-        //Body
-
-        // Body
-
-        // HashMap
-        //Json File
-        //POJO (plain old java object)
-
-
-
-
-
-
 
     }
 
