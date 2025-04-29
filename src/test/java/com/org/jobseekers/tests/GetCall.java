@@ -6,8 +6,6 @@ import org.testng.annotations.Test;
 import java.util.*;
 
 import static  io.restassured.RestAssured.*;
-import static io.restassured.matcher.RestAssuredMatchers.*;
-import static org.hamcrest.Matchers.*;
 
 public class GetCall {
 
@@ -44,5 +42,31 @@ public class GetCall {
         }
         int getStatusCode= response.getStatusCode();
         Assert.assertEquals(getStatusCode, 200);
+    }
+
+    @Test
+    public void getCall(){
+
+        String url = "https://reqres.in/api/users";
+
+        Response response = given()
+                .header("Content-Type", "application/json")
+                .queryParam("page", 2)
+                .when()
+                .get(url)
+                .then()
+                .log().everything()
+                .extract().response();
+
+        int getStatusCode =  response.getStatusCode();
+        Assert.assertEquals(getStatusCode, 200);
+
+        int getId = response.jsonPath().getInt("data.id[0]");
+        System.out.println(getId);
+        Assert.assertEquals(getId, 7);
+
+        String getEmail = response.jsonPath().getString("data[2].email");
+        System.out.println(getEmail);
+        Assert.assertFalse(getEmail.isEmpty(), "Email is not Empty");
     }
 }

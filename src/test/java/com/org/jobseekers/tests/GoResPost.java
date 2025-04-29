@@ -4,6 +4,10 @@ import com.org.jobseekers.commons.Base;
 import com.org.jobseekers.utils.FakerClass;
 import com.org.jobseekers.utils.RequestPayload;
 import io.restassured.response.Response;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -16,7 +20,6 @@ public class GoResPost extends Base {
 
         RequestPayload requestPayload = new RequestPayload(1, "Midhun", FakerClass.getEmail(), "Male", "Active");
         Response response = postRequest("public/v2/users", requestPayload);
-
         response.prettyPrint();
     }
 
